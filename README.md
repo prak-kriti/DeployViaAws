@@ -33,6 +33,11 @@
    ```sh
    ssh -i /path/to/your-key-pair.pem ubuntu@your-ec2-public-dns
 
+ ### 4.Pull Your Website Docker Image
+1. Open your terminal.
+2. Connect to your instance using SSH:
+   ```sh
+   ssh -i /path/to/your-key-pair.pem ubuntu@your-ec2-public-dns
 
 
 
