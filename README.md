@@ -48,6 +48,7 @@ RUN mv Ninestars/* .
 RUN rm -rf Ninestars Ninestars.zip
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
+### 5. Create Dockerfile and nginx configuration
 
 nginx configuration file
 
