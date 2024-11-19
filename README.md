@@ -48,7 +48,8 @@ RUN unzip Ninestars.zip
 RUN mv Ninestars/* .
 RUN rm -rf Ninestars Ninestars.zip
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]```
+CMD ["nginx", "-g", "daemon off;"]
+exit 0
 
 ### 5. nginx configuration
  ### 5. nginx configuration 
