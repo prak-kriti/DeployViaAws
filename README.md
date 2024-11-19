@@ -35,6 +35,7 @@
 
  ### 4. Create Dockerfile and nginx configuration
 Dockerfile
+
 ```sh
 FROM nginx:latest
 RUN apt-get update && apt-get upgrade -y
@@ -47,6 +48,18 @@ RUN mv Ninestars/* .
 RUN rm -rf Ninestars Ninestars.zip
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
+
+nginx configuration file
+
+```sh
+server {
+        listen 80 default_server;
+        root /usr/share/nginx/html;
+        index index.html;
+        server_name mysite.com;
+}
+
+###5.Build Docker Image
 
 
 
