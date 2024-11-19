@@ -31,9 +31,10 @@
 1. Open your terminal.
 2. Connect to your instance using SSH:
    ```sh
-   ssh -i /path/to/your-key-pair.pem ubuntu@your-ec2-public-dns
-
- ### 4. Create Dockerfile and nginx configuration
+   ssh -i /path/to/your-key-pair.pem ubuntu@your-ec2-public-dn
+   
+  ### 5. nginx configuration 
+  ### 4. Create Dockerfile 
 Dockerfile
 
 ```sh
@@ -47,20 +48,8 @@ RUN unzip Ninestars.zip
 RUN mv Ninestars/* .
 RUN rm -rf Ninestars Ninestars.zip
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-### 5. Create Dockerfile and nginx configuration
+CMD ["nginx", "-g", "daemon off;"]```
 
-nginx configuration file
-
-```sh
-server {
-        listen 80 default_server;
-        root /usr/share/nginx/html;
-        index index.html;
-        server_name mysite.com;
-}
-
-###5.Build Docker Image
-
-
-
+### 5. nginx configuration
+ ### 5. nginx configuration 
+ 
