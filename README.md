@@ -35,6 +35,7 @@
 
  ### 4. Create Dockerfile and nginx configuration
 Dockerfile
+```sh
 FROM nginx:latest
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install wget unzip -y
