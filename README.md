@@ -36,7 +36,7 @@
 ### 4. Create Dockerfile 
 Dockerfile
 
-echo
+```sh
 FROM nginx:latest
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install wget unzip -y
@@ -48,7 +48,7 @@ RUN mv Ninestars/* .
 RUN rm -rf Ninestars Ninestars.zip
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-echo
+```
 
 ### 5. nginx configuration
 ```sh
