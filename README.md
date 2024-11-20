@@ -33,24 +33,32 @@
    ```sh
    ssh -i /path/to/your-key-pair.pem ubuntu@your-ec2-public-dn
    
-  ### 5. nginx configuration 
-  ### 4. Create Dockerfile 
+### 4. Create Dockerfile 
 Dockerfile
 
-```sh
+echo
 FROM nginx:latest
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install wget unzip -y
 WORKDIR /usr/share/nginx/html
 COPY default.conf /etc/nginx/sites-enabled/
-ADD https://bootstrapmade.com/content/templatefiles/Ninestars/Ninestars.zip .
+ADD https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
 RUN unzip Ninestars.zip
 RUN mv Ninestars/* .
 RUN rm -rf Ninestars Ninestars.zip
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-exit 0
+echo
 
 ### 5. nginx configuration
- ### 5. nginx configuration 
+server {
+        listen 80 default_server;
+        root /usr/share/nginx/html;
+        index index.html;
+        server_name mysite.com;
+}
+ ### 6. Build Docker Image
+ docker build -t testimg:v1 . 
  
+ ### 7.Run the Container
+ docker run -it --rm -d -p 80:80 testimg:v1  
