@@ -34,6 +34,7 @@
    ssh -i /path/to/your-key-pair.pem ubuntu@your-ec2-public-dn
 ### 4.Create an EC2 Instance using below provision shell script
 #!/bin/bash
+
 sudo apt-get update -y
 sudo apt-get install wget curl git vim ca-certificates gnupg lsb-release -y
 sudo mkdir -p /etc/apt/keyrings
@@ -47,8 +48,6 @@ sudo sudo systemctl start docker
 sudo sudo enable start docker
 sudo wget https://github.com/docker/compose/releases/download/v2.14.0/docker-compose-linux-x86_64 -O /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-echo "Docker and Docker Compose have been installed successfully."
-exit 0
 
 ### 5. Create Dockerfile 
 Dockerfile
