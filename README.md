@@ -51,19 +51,19 @@ CMD ["nginx", "-g", "daemon off;"]
 echo
 
 ### 5. nginx configuration
-echo
+```sh
 server {
         listen 80 default_server;
         root /usr/share/nginx/html;
         index index.html;
         server_name mysite.com;
 }
-echo
+
  ### 6. Build Docker Image
- echo
+```sh
  docker build -t testimg:v1 . 
- echo
+ 
  ### 7.Run the Container
- echo
+ ```sh
  docker run -it --rm -d -p 80:80 testimg:v1  
- echo
+ 
