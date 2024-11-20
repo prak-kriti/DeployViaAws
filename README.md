@@ -34,45 +34,19 @@
    ssh -i /path/to/your-key-pair.pem ubuntu@your-ec2-public-dn
 ### 4.Create an EC2 Instance using below provision shell script
 #!/bin/bash
-# Update package lists and upgrade all packages
 sudo apt-get update -y
-sudo apt-get upgrade -y
-
-# Install necessary packages
 sudo apt-get install wget curl git vim ca-certificates gnupg lsb-release -y
-
-# Create the directory for Docker's keyrings
 sudo mkdir -p /etc/apt/keyrings
-
-# Add Docker's official GPG key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-
-# Set up the Docker repository
 sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-# Update the package index
 sudo apt-get update -y
-
-# Verify that Docker is available in the apt-cache
 sudo apt-cache policy docker-ce
-
-# Install Docker and related components
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
-
-# Add the current user to the Docker group
 sudo usermod -aG docker <USERNAME>
-
-# Start Docker and enable it to start on boot
-sudo systemctl start docker
-sudo systemctl enable docker
-
-# Download Docker Compose
+sudo sudo systemctl start docker
+sudo sudo enable start docker
 sudo wget https://github.com/docker/compose/releases/download/v2.14.0/docker-compose-linux-x86_64 -O /usr/local/bin/docker-compose
-
-# Apply executable permissions to the Docker Compose binary
 sudo chmod +x /usr/local/bin/docker-compose
-
-# Script completed successfully
 echo "Docker and Docker Compose have been installed successfully."
 exit 0
 
