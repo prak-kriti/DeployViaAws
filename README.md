@@ -58,12 +58,15 @@ server {
         index index.html;
         server_name mysite.com;
 }
+```
 
  ### 6. Build Docker Image
 ```sh
- docker build -t testimg:v1 . 
+ docker build -t testimg:v1 .
+```
  
  ### 7.Run the Container
  ```sh
- docker run -it --rm -d -p 80:80 testimg:v1  
+ docker run -it --rm -d -p 80:80 testimg:v1
+```
  
